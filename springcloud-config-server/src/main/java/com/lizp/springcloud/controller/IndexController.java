@@ -1,4 +1,4 @@
-package com.lizp.springboot.controller;
+package com.lizp.springcloud.controller;
 
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
