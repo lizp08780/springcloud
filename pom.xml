@@ -16,6 +16,8 @@
 	</properties>
 
 	<modules>
+	<module>springcloud-config-server</module>
+	<module>springcloud-eureka-server</module>
 	</modules>
 
 	<parent>
