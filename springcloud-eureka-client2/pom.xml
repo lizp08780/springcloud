@@ -10,17 +10,12 @@
 	<modelVersion>4.0.0</modelVersion>
 	<packaging>jar</packaging>
 	<description>springcloud整合eureka-client</description>
-	<artifactId>springcloud-eureka-product</artifactId>
+	<artifactId>springcloud-eureka-consumer</artifactId>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-eureka-server</artifactId>
-			<version>1.4.4.RELEASE</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-ribbon</artifactId>
 			<version>1.4.4.RELEASE</version>
 		</dependency>
 	</dependencies>

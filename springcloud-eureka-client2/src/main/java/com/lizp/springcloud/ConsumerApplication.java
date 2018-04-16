@@ -7,8 +7,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @EnableDiscoveryClient
 // @EnableFeignClients
 @SpringBootApplication
-public class EurekaClientApplication {
+public class ConsumerApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(EurekaClientApplication.class, args);
+		SpringApplication.run(ConsumerApplication.class, args);
 	}
 }
