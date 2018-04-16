@@ -7,14 +7,14 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
+
+import com.lizp.springcloud.service.TestService;
 
 @RestController
 @RequestMapping(value = "/product")
 public class IndexController {
-
 	@Autowired
-	private RestTemplate restTemplate;
+	private TestService testService;
 
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String index(ModelMap map) {
@@ -22,11 +22,10 @@ public class IndexController {
 		return "index";
 	}
 
-	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/test", method = RequestMethod.GET)
 	public List<String> test() {
-		System.err.println("begin...");
-		return restTemplate.getForObject("http://consumer-service/consumer/test", List.class);
+		System.err.println("end...");
+		return testService.getTest();
 	}
 
 }

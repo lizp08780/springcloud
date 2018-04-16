@@ -8,11 +8,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 @EnableDiscoveryClient
-// @EnableFeignClients
 @SpringBootApplication
-public class ProductApplication {
+public class ConsumerApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(ProductApplication.class, args);
+		SpringApplication.run(ConsumerApplication.class, args);
 	}
 
 	@Bean

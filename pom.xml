@@ -18,6 +18,8 @@
 	<modules>
 		<module>springcloud-config-server</module>
 		<module>springcloud-eureka-server</module>
+		<module>springcloud-eureka-consumer</module>
+		<module>springcloud-eureka-product</module>
 	</modules>
 
 	<parent>
