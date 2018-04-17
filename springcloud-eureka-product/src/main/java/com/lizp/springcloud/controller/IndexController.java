@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.config.environment.Environment;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,20 +18,22 @@ import com.lizp.springcloud.service.TestService;
 public class IndexController {
 	@Autowired
 	private TestService testService;
-	@Value("${sang}")
-	private String sang;
-//	@Autowired
-//	private Environment env;
+	@Value("${server.port}")
+	private String port;
+	@Value("${eureka.client.service-url.defaultZone}")
+	private String defaultZone;
+	@Autowired
+	private Environment env;
 
-	@RequestMapping("/sang")
+	@RequestMapping("/port")
 	public String sang() {
-		return this.sang;
+		return this.port + ":" + this.defaultZone;
 	}
 
-//	@RequestMapping("/sang2")
-//	public Environment sang2() {
-//		return env;
-//	}
+	@RequestMapping("/env")
+	public String sang2() {
+		return env.getProperty("server.port");
+	}
 
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String index() {
