@@ -22,4 +22,9 @@ public class ConsumerApplication {
 	public RestTemplate restTemplate() {
 		return new RestTemplate();
 	}
+
+	// @Bean
+	// public HystrixCommandAspect hystrixCommandAspect() {
+	// return new HystrixCommandAspect();
+	// }
 }
