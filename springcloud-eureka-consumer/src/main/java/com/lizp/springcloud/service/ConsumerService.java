@@ -11,6 +11,9 @@ import org.springframework.web.client.RestTemplate;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.command.AsyncResult;
 
+import rx.Observable;
+import rx.Subscriber;
+
 @Service
 public class ConsumerService {
 	@Autowired
@@ -39,5 +42,25 @@ public class ConsumerService {
 				return restTemplate.getForObject("http://product-service/product/test", List.class);
 			}
 		};
+	}
+
+	// @HystrixCommand(observableExecutionMode =
+	// ObservableExecutionMode.EAGER)表示使用observe模式来执行
+	// @HystrixCommand(observableExecutionMode =
+	// ObservableExecutionMode.LAZY)表示使用toObservable模式来执行
+	// 响应式函数编程
+	@SuppressWarnings({ "deprecation", "unchecked" })
+	@HystrixCommand
+	public Observable<List<String>> test4() {
+		return Observable.create(new Observable.OnSubscribe<List<String>>() {
+			@Override
+			public void call(Subscriber<? super List<String>> subscriber) {
+				if (!subscriber.isUnsubscribed()) {
+					List<String> list = restTemplate.getForObject("http://product-service/product/test", List.class);
+					subscriber.onNext(list);
+					subscriber.onCompleted();
+				}
+			}
+		});
 	}
 }
