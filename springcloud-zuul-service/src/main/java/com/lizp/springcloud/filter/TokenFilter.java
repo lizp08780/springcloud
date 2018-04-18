@@ -21,14 +21,15 @@ public class TokenFilter extends ZuulFilter {
 
 	@Override
 	public int filterOrder() {
-		return 0; // filter执行顺序，通过数字指定 ,优先级为0，数字越大，优先级越低
+		return 0; // 过滤器的执行顺序，通过数字指定 ,优先级为0，数字越大，优先级越低
 	}
 
 	@Override
 	public boolean shouldFilter() {
-		return true; // 是否执行该过滤器，此处为true，说明需要过滤
+		return true; // 判断过滤器是否执行，true表示执行，false表示不执行
 	}
 
+	// 过滤的具体逻辑
 	@Override
 	public Object run() {
 		RequestContext ctx = RequestContext.getCurrentContext();
