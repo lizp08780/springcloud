@@ -6,6 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 @FeignClient("product-service")
 public interface HomeClient {
 
-	@GetMapping("/port")
+	@GetMapping("/product/port")
 	String port();
 }
