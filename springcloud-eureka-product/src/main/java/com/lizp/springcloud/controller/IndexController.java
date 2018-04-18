@@ -26,7 +26,7 @@ public class IndexController {
 	private Environment env;
 
 	@RequestMapping("/port")
-	public String sang() {
+	public String port() {
 		return this.port + ":" + this.defaultZone;
 	}
 
