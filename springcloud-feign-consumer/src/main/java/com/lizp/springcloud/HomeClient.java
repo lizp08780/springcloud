@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+//@FeignClient(value = "product-service",fallback = HelloServiceFallback.class)指定服务降级处理类
 @FeignClient("product-service") // 指定服务名进而绑定服务
 public interface HomeClient {
 
