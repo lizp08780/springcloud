@@ -15,6 +15,7 @@ public class ConsumerController {
 	@GetMapping(value = "/hello")
 	public String hello() {
 		System.err.println("begin hello...");
+		System.err.println(homeClient.hello("world"));
 		return homeClient.port();
 	}
 }

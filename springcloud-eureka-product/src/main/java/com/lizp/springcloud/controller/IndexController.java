@@ -46,4 +46,9 @@ public class IndexController {
 		return testService.getTest();
 	}
 
+	@RequestMapping(value = "/hello", method = RequestMethod.GET)
+	public String hello(String name) {
+		return "hello " + name + "!";
+	}
+
 }
