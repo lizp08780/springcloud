@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 
 import javax.servlet.http.HttpServletRequest;
 
+//http://127.0.0.1:8015/product/port?token=123456&password=123456
 public class PasswordFilter extends ZuulFilter {
 
 	private final Logger LOGGER = LoggerFactory.getLogger(TokenFilter.class);
